@@ -1,0 +1,296 @@
+{% extends "index.html" %}
+
+{% block content %}
+{% load static %}
+
+    <div class="top">
+        <i class="uil uil-bars sidebar-toggle"></i>
+        <img src="images/profile.jpg" alt="">
+    </div>
+    
+    <div class="dash-content">
+        <div class="overview">
+            <div class="title">
+                <i class="uil uil-tachometer-fast-alt"></i>
+                <span class="text">Choisir le type de la construction :</span>
+            </div>
+            <?xml version="1.0" standalone="no"?>
+
+
+           
+                
+                <div class="boxes">
+                  <a href="{% url 'dessin' %}"><button>Constructions à bases rectangulaires</button></a>
+                  
+                  <button>Constructions  à bases polygonales </button>
+                  <button>Constructions  à bases circulaires </button>
+                  <button>Constructions  à bases ouvertes</button>
+                  <style>button {
+                    --color: #0077ff;
+                    font-family: inherit;
+                    display: inline-block;
+                    width: 60em;
+                    height: 2.6em;
+                    line-height: 2.5em;
+                    overflow: hidden;
+                    cursor: pointer;
+                    margin: 20px;
+                    font-size: 17px;
+                    z-index: 1;
+                    color: var(--color);
+                    border: 2px solid var(--color);
+                    border-radius: 6px;
+                    position: relative;
+                  }
+                  
+                  button::before {
+                    position: absolute;
+                    content: "";
+                    background: var(--color);
+                    width: 150px;
+                    height: 200px;
+                    z-index: -1;
+                    border-radius: 50%;
+                  }
+                  
+                  button:hover {
+                    color: white;
+                  }
+                  
+                  button:before {
+                    top: 100%;
+                    left: 100%;
+                    transition: 0.3s all;
+                  }
+                  
+                  button:hover::before {
+                    top: -30px;
+                    left: -30px;
+                  }
+                  </style>
+                  
+                    
+                    
+                   
+                   
+                    
+                    
+                   
+                    
+                    
+                </div>
+                  
+                   
+                 
+                   
+                  
+              
+
+           
+        </div>
+
+        <div class="activity">
+            
+            
+
+            
+                
+            
+        </div>
+    </div>
+    
+</section>
+<!-- yourapp/templates/yourapp/delete_car.html -->
+
+<style>
+    /* Styles for the first dropdown */
+    .dropbtn1 {
+      background-color: #4DA3FF;
+      color: white;
+      padding: 16px;
+      font-size: 20px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropbtn1:hover, .dropbtn1:focus {
+      background-color: #4DA3FF;
+    }
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content a:hover {background-color: #ddd;}
+    
+    .show {display: block;}
+
+    /* Styles for the second dropdown */
+    .dropbtn2 {
+      background-color: #FFE6AC;
+      color: white;
+      padding: 16px;
+      font-size: 16px;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .dropbtn2:hover, .dropbtn2:focus {
+      background-color:  #FFE6AC
+    }
+    
+    .dropdown2 {
+      position: relative;
+      display: inline-block;
+    }
+    
+    .dropdown-content2 {
+      display: none;
+      position: absolute;
+      background-color: #f1f1f1;
+      min-width: 160px;
+      overflow: auto;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      z-index: 1;
+    }
+    
+    .dropdown-content2 a {
+      color: black;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+    }
+    
+    .dropdown-content2 a:hover {background-color: #ddd;}
+    
+    .show2 {display: block;}
+    .form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.boxes {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 12px;
+  padding: 15px 20px;
+  background-color: #4DA3FF; /* Couleur de fond par défaut */
+  transition: all 0.5s ease;
+  width: calc(100% / 5 - 15px); /* Répartit les boîtes en fonction du nombre */
+}
+
+.input-container {
+  margin-bottom: 15px;
+}
+
+input[type="number"],
+
+select {
+  width: 100%; /* Utilise toute la largeur disponible */
+  padding: 20px; /* Augmente le rembourrage pour un aspect plus spacieux */
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  outline: none;
+  font-size: 30px; /* Augmente la taille de la police pour une meilleure lisibilité */
+  margin-bottom: 10px; /* Ajoute un peu d'espace en bas de chaque champ */
+}
+
+.submit {
+  background-color: #4DA3FF;
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  padding: 20px 50px;
+  cursor: pointer;
+  font-size: medium;
+  transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+  background-color: #0b3cc1; /* Couleur de survol */
+}
+
+</style>
+<script>
+    
+    // JavaScript functions for the first dropdown
+    function myFunction1(option) {
+        var dropdownButton = document.getElementById("dropdownButton1");
+        dropdownButton.textContent = option;
+        document.getElementById("myDropdown1").classList.toggle("show");
+    }
+    
+    // JavaScript functions for the second dropdown
+    function myFunction2(option) {
+        var dropdownButton = document.getElementById("dropdownButton2");
+        dropdownButton.textContent = option;
+        document.getElementById("myDropdown2").classList.toggle("show2");
+    }
+    
+    window.onclick = function(event) {
+        if (!event.target.matches('.dropbtn1')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show')) {
+                    openDropdown.classList.remove('show');
+                }
+            }
+        }
+
+        if (!event.target.matches('.dropbtn2')) {
+            var dropdowns = document.getElementsByClassName("dropdown-content2");
+            var i;
+            for (i = 0; i < dropdowns.length; i++) {
+                var openDropdown = dropdowns[i];
+                if (openDropdown.classList.contains('show2')) {
+                    openDropdown.classList.remove('show2');
+                }
+            }
+        }
+    }
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('myForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+        
+        // Afficher la petite fenêtre ici
+        alert("La soumission du formulaire est réussie!");
+
+        // Vous pouvez également afficher une boîte de dialogue modale personnalisée ici
+        
+        // Réinitialiser le formulaire si nécessaire
+        // document.getElementById('myForm').reset();
+    });
+});
+</script>
+{% endblock %}

@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<!--=== Coding by CodingLab | www.codinglabweb.com === -->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% load static %}
+    <!----======== CSS ======== -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+     
+    <!----===== Iconscout CSS ===== -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+
+    <title>Admin Dashboard Panel</title> 
+</head>
+<body>
+    <nav>
+        <div class="logo-name">
+            <div class="logo-image">
+                <img src="images/logo.png" alt="">
+            </div>
+
+            <span class="logo_name">LAB</span>
+        </div>
+
+        <div class="menu-items">
+            <ul class="nav-links">
+              <li><a href="/">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path fill="currentColor" d="m20 8l-6-5.26a3 3 0 0 0-4 0L4 8a3 3 0 0 0-1 2.26V19a3 3 0 0 0 3 3h12a3 3 0 0 0 3-3v-8.75A3 3 0 0 0 20 8m-6 12h-4v-5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1Zm5-1a1 1 0 0 1-1 1h-2v-5a3 3 0 0 0-3-3h-2a3 3 0 0 0-3 3v5H6a1 1 0 0 1-1-1v-8.75a1 1 0 0 1 .34-.75l6-5.25a1 1 0 0 1 1.32 0l6 5.25a1 1 0 0 1 .34.75Z"/></svg> 
+                     <span class="link-name">    Dahsboard</span>
+            </a></li>
+                <li><a href="{% url 'nuage' %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 16 16"><path fill="currentColor" d="M8 16a.5.5 0 0 1-.5-.5v-1.293l-.646.647a.5.5 0 0 1-.707-.708L7.5 12.793V8.866l-3.4 1.963l-.496 1.85a.5.5 0 1 1-.966-.26l.237-.882l-1.12.646a.5.5 0 0 1-.5-.866l1.12-.646l-.884-.237a.5.5 0 1 1 .26-.966l1.848.495L7 8L3.6 6.037l-1.85.495a.5.5 0 0 1-.258-.966l.883-.237l-1.12-.646a.5.5 0 1 1 .5-.866l1.12.646l-.237-.883a.5.5 0 1 1 .966-.258l.495 1.849L7.5 7.134V3.207L6.147 1.854a.5.5 0 1 1 .707-.708l.646.647V.5a.5.5 0 1 1 1 0v1.293l.647-.647a.5.5 0 1 1 .707.708L8.5 3.207v3.927l3.4-1.963l.496-1.85a.5.5 0 1 1 .966.26l-.236.882l1.12-.646a.5.5 0 0 1 .5.866l-1.12.646l.883.237a.5.5 0 1 1-.26.966l-1.848-.495L9 8l3.4 1.963l1.849-.495a.5.5 0 0 1 .259.966l-.883.237l1.12.646a.5.5 0 0 1-.5.866l-1.12-.646l.236.883a.5.5 0 1 1-.966.258l-.495-1.849l-3.4-1.963v3.927l1.353 1.353a.5.5 0 0 1-.707.708l-.647-.647V15.5a.5.5 0 0 1-.5.5z"/></svg>
+                         <span class="link-name">  Nuage</span>
+                </a></li>
+                
+                <li><a href="{% url 'vent' %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M182 184a30 30 0 0 1-30 30c-12.9 0-25.36-8.38-29.63-19.92a6 6 0 0 1 11.26-4.16C136.13 196.69 144.2 202 152 202a18 18 0 0 0 0-36H40a6 6 0 0 1 0-12h112a30 30 0 0 1 30 30M150 72a30 30 0 0 0-30-30c-12.9 0-25.36 8.38-29.63 19.92a6 6 0 1 0 11.26 4.16C104.13 59.31 112.2 54 120 54a18 18 0 0 1 0 36H24a6 6 0 0 0 0 12h96a30 30 0 0 0 30-30m58 2c-12.9 0-25.36 8.38-29.63 19.92a6 6 0 1 0 11.26 4.16C192.13 91.31 200.2 86 208 86a18 18 0 0 1 0 36H32a6 6 0 0 0 0 12h176a30 30 0 0 0 0-60"/></svg>
+                    <span class="link-name">Vent (Toiture)</span>
+                </a></li>
+                <li><a href="{% url 'parois' %}">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 256 256"><path fill="currentColor" d="M182 184a30 30 0 0 1-30 30c-12.9 0-25.36-8.38-29.63-19.92a6 6 0 0 1 11.26-4.16C136.13 196.69 144.2 202 152 202a18 18 0 0 0 0-36H40a6 6 0 0 1 0-12h112a30 30 0 0 1 30 30M150 72a30 30 0 0 0-30-30c-12.9 0-25.36 8.38-29.63 19.92a6 6 0 1 0 11.26 4.16C104.13 59.31 112.2 54 120 54a18 18 0 0 1 0 36H24a6 6 0 0 0 0 12h96a30 30 0 0 0 30-30m58 2c-12.9 0-25.36 8.38-29.63 19.92a6 6 0 1 0 11.26 4.16C192.13 91.31 200.2 86 208 86a18 18 0 0 1 0 36H32a6 6 0 0 0 0 12h176a30 30 0 0 0 0-60"/></svg>
+                    <span class="link-name">Vent (Parois)</span>
+                </a></li>
+                
+                
+                
+                
+               
+            
+            <ul class="logout-mode">
+                <li class="mode">
+                    <a href="#">
+                        <i class="uil uil-moon"></i>
+                    <span class="link-name">Dark Mode</span>
+                </a>
+
+                <div class="mode-toggle">
+                  <span class="switch"></span>
+                </div>
+            </li>
+            </ul>
+        </div>
+    </nav>
+
+    <section class="dashboard">
+        <div id="content">
+            
+    <div class="top">
+      <i class="uil uil-bars sidebar-toggle"></i>
+      <img src="images/profile.jpg" alt="">
+  </div>
+  
+  <div class="dash-content">
+      <div class="overview">
+          <div class="title">
+              <i class="uil uil-tachometer-fast-alt"></i>
+              <span class="text">Vent(Toiture)</span>
+          </div>
+          
+
+          <form class="form" method="POST">
+              {% csrf_token %}
+              <div class="boxes">
+                <div class="box box3">
+                  <label for="versent">Choisir l'angle de vent :</label>
+                  <select name="versent" id="versent">
+                      <option value="0">0</option>
+                      <option value="90">90</option>
+                  </select>
+              </div>
+              
+             
+             
+              
+              
+                  <div class="box box1">
+                      <div class="input-container">
+                          <input placeholder="Angle de ponte" type="number" name="ponte" step="0.01">
+                      </div>
+                      
+                      
+                  </div>
+                  <div class="box box2">
+                      <div class="input-container">
+                          <input placeholder="Largeur 'd'" type="number" name="d" step="0.01">
+                 
+                      </div>
+                  </div>
+                  <div class="box box2">
+                    <div class="input-container">
+                        <input placeholder="Longeur 'b'" type="number" name="b" step="0.01">
+               
+                    </div>
+                </div>
+                <div class="box box2">
+                  <div class="input-container">
+                      <input placeholder="surface des ouvertures" type="number" name="s" step="0.01">
+             
+                  </div>
+              </div>
+              <div class="box box2">
+                <div class="input-container">
+                    <input placeholder="Hauteur" type="number" name="h" step="0.01">
+           
+                </div>
+            </div>
+                  {{ form.errors }}
+                 
+                  
+                  
+                 
+                  
+                  <div class="box box4">
+                      <h1>Résultats du calcul</h1>
+                      
+                      
+                      
+                      <p>Valeur de cpef: {{ cpef }}</p>
+                      <p>Valeur de cpeg: {{ cpeg }}</p>
+                      <p>Valeur de cpeh: {{ cpeh }}</p>
+                      <p>Valeur de cpei: {{ cpei }}</p>
+                      
+                      
+                      {% if ve == 0 %}      
+                          
+                          <p>Valeur de cpej: {{ cpej }}</p>
+                    
+                      {% else %}
+                      <p></p>
+                      {% endif %}
+                      
+                      
+
+              
+
+                      
+                  </div>
+              </div>
+                
+                 
+               
+                 
+                  <button class="submit" type="submit">
+                 Calculer
+               </button>
+          
+               
+            </form>
+
+         
+      </div>
+
+      <div class="activity">
+        {% if bool == 0  %}
+        <svg width="1000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <!-- Premier rectangle -->
+          <rect x="20" y="20" width="50" height="150" stroke="black" fill="lightblue" stroke-width="1"/>
+          <text x="-1" y="108" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle" transform="rotate(270, -1, 95)">{{e4}}</text>
+
+          <line x1="20" y1="485" x2="80" y2="485" stroke="black" stroke-width="1" stroke-dasharray="10"/>
+          <text x="30" y="500" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle">{{e10}}</text>
+          <!-- Deuxième rectangle -->
+          <rect x="20" y="170" width="50" height="150" stroke="black" fill="#FF5030" stroke-width="1"/>
+          
+          
+          <!-- Troisième rectangle -->
+          <rect x="20" y="320" width="50" height="150" stroke="black" fill="lightblue" stroke-width="1"/>
+          
+          <text x="-330" y="108" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle" transform="rotate(270, -1, 95)">{{e4}}</text>
+          <!-- Quatrième rectangle -->
+          <rect x="70" y="20" width="100" height="450" stroke="black" fill="red" stroke-width="1"/>
+
+          
+          <!-- Cinquième rectangle -->
+          <rect x="170" y="20" width="100" height="450" stroke="black" fill="lightgreen" stroke-width="1"/>
+
+          
+          <!-- Sixième rectangle -->
+          <rect x="270" y="20" width="100" height="450" stroke="black" fill="blue" stroke-width="1"/>
+          <text x="395" y="260" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle">b={{b}}</text>
+          <text x="190" y="10" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle">d={{de}}</text>
+          
+          <!-- Ligne verticale pour mesurer la hauteur -->
+          <line x1="385" y1="20" x2="385" y2="470" stroke="black" stroke-width="1" stroke-dasharray="10"/>
+          <line x1="20" y1="0" x2="380" y2="0" stroke="black" stroke-width="1" stroke-dasharray="10"/>
+          <line x1="170" y1="20" x2="170" y2="471" stroke="black" stroke-width="5" stroke-dasharray="5.5"/>
+          <text x="45" y="95" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">F</text>
+          {% if cpef|length == 2 %}
+          <text x="45" y="45" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpef.0}}</text>
+          <text x="45" y="140" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpef.1}}</text>
+          <text x="45" y="350" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpef.0}}</text>
+          <text x="45" y="430" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpef.1}}</text>
+          {% else %}
+          <text x="45" y="45" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpef}}</text>
+          <text x="45" y="350" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpef}}</text>
+          {% endif %}
+          
+          <text x="45" y="245" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">G</text>
+          {% if cpeg|length == 2 %}
+          <text x="45" y="210" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeg.0}}</text>
+          <text x="45" y="280" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeg.1}}</text>
+          {% else %}
+          <text x="45" y="210" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeg}}</text>
+
+          {% endif %}
+
+          <text x="45" y="395" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">F</text>
+      
+          <text x="120" y="245" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">H</text>
+          {% if cpeh|length == 2 %}
+          <text x="120" y="100" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeh.0}}</text>
+          <text x="120" y="350" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeh.1}}</text>
+          {% else %}
+          <text x="120" y="100" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeh}}</text>
+          {% endif %}
+          <text x="220" y="245" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">J</text>
+          {% if cpej|length == 2 %}
+          <text x="220" y="100" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpej.0}}</text>
+          <text x="220" y="350" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpej.1}}</text>
+          {% else %}
+          <text x="220" y="100" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpej}}</text>
+          {% endif %}
+          <text x="320" y="245" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">I</text>
+          {% if cpei|length == 2 %}
+          <text x="320" y="100" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpei.0}}</text>
+          <text x="320" y="350" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpei.1}}</text>
+          {% else %}
+          <text x="320" y="100" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpei}}</text>
+
+          {% endif %}
+
+      </svg>
+      {% elif bool == 1 %}
+      <svg width="1000" height="1000" version="1.1" xmlns="http://www.w3.org/2000/svg">
+        <!-- Premier rectangle -->
+        <text x="-1" y="108" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle" transform="rotate(270, -1, 95)">{{e4}}</text>
+        <text x="-330" y="108" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle" transform="rotate(270, -1, 95)">{{e4}}</text>
+        <rect x="20" y="20" width="50" height="150" stroke="black" fill="lightblue" stroke-width="1"/>
+
+        <line x1="20" y1="485" x2="80" y2="485" stroke="black" stroke-width="1" stroke-dasharray="10"/>
+        <line x1="20" y1="510" x2="180" y2="510" stroke="black" stroke-width="1" stroke-dasharray="10"/>
+        <text x="30" y="500" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle">{{e10}}</text>
+        <text x="80" y="525" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle">{{e2}}</text>
+        <!-- Deuxième rectangle -->
+        <rect x="20" y="170" width="50" height="75" stroke="black" fill="#FF5030" stroke-width="1"/>
+        <text x="45" y="207" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">G</text>
+        <text x="45" y="230" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeg}}</text>
+        <!-- Rectangle inférieur -->
+        <rect x="20" y="245" width="50" height="75" stroke="black" fill="#FF5030" stroke-width="1"/>
+        <text x="45" y="282" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">G</text>
+        <text x="45" y="305" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeg}}</text>
+        <!-- Troisième rectangle -->
+        <rect x="20" y="320" width="50" height="150" stroke="black" fill="lightblue" stroke-width="1"/>
+
+        
+        <!-- Quatrième rectangle -->
+        <rect x="70" y="20" width="100" height="225" stroke="black" fill="red" stroke-width="1"/>
+    <text x="120" y="132" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">H1</text>
+    <text x="120" y="200" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeh}}</text>
+    
+    <!-- Rectangle inférieur -->
+    <rect x="70" y="245" width="100" height="225" stroke="black" fill="red" stroke-width="1"/>
+    <text x="120" y="357" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">H</text>
+    <text x="120" y="400" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpeh}}</text>
+
+        
+        <!-- Cinquième rectangle -->
+        <rect x="170" y="20" width="200" height="225" stroke="black" fill="lightgreen" stroke-width="1"/>
+    <text x="270" y="132" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">I</text>
+    <text x="270" y="200" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpei}}</text>
+    
+    <!-- Rectangle inférieur -->
+    <rect x="170" y="245" width="200" height="225" stroke="black" fill="lightgreen" stroke-width="1"/>
+    <text x="270" y="357" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">I</text>
+    <text x="270" y="400" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpei}}</text>
+        <text x="395" y="260" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle">b={{b}}</text>
+        <text x="190" y="10" font-family="Arial" font-size="16" fill="black" text-anchor="start" alignment-baseline="middle">d={{de}}</text>
+        
+        <!-- Ligne verticale pour mesurer la hauteur -->
+        <line x1="385" y1="20" x2="385" y2="470" stroke="black" stroke-width="1" stroke-dasharray="10"/>
+        <line x1="20" y1="0" x2="380" y2="0" stroke="black" stroke-width="1" stroke-dasharray="10"/>
+        <line x1="20" y1="245" x2="370" y2="245" stroke="black" stroke-width="5" stroke-dasharray="5.5"/>
+        
+        <text x="45" y="95" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">F</text>
+        <text x="45" y="130" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpef}}</text>
+
+    
+
+        <text x="45" y="395" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">F</text>
+        <text x="45" y="430" font-family="Arial" font-size="16" fill="black" text-anchor="middle" alignment-baseline="middle">{{cpef}}</text>
+
+
+
+        
+
+    </svg>
+
+      {% endif %}
+        
+          
+          
+
+          
+              
+          
+      </div>
+  </div>
+  
+</section>
+<!-- yourapp/templates/yourapp/delete_car.html -->
+
+<style>
+  /* Styles for the first dropdown */
+  .dropbtn1 {
+    background-color: #4DA3FF;
+    color: white;
+    padding: 16px;
+    font-size: 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn1:hover, .dropbtn1:focus {
+    background-color: #4DA3FF;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {background-color: #ddd;}
+  
+  .show {display: block;}
+
+  /* Styles for the second dropdown */
+  .dropbtn2 {
+    background-color: #FFE6AC;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .dropbtn2:hover, .dropbtn2:focus {
+    background-color:  #FFE6AC
+  }
+  
+  .dropdown2 {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content2 {
+    display: none;
+    position: absolute;
+    background-color: #f1f1f1;
+    min-width: 160px;
+    overflow: auto;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+  }
+  
+  .dropdown-content2 a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content2 a:hover {background-color: #ddd;}
+  
+  .show2 {display: block;}
+  .form {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+.boxes {
+display: flex;
+justify-content: space-between;
+margin-top: 20px;
+}
+
+.box {
+display: flex;
+flex-direction: column;
+align-items: center;
+border-radius: 12px;
+padding: 15px 20px;
+background-color: #4DA3FF; /* Couleur de fond par défaut */
+transition: all 0.5s ease;
+width: calc(100% / 5 - 15px); /* Répartit les boîtes en fonction du nombre */
+}
+
+.input-container {
+margin-bottom: 15px;
+}
+
+input[type="number"],
+
+select {
+width: 100%; /* Utilise toute la largeur disponible */
+padding: 20px; /* Augmente le rembourrage pour un aspect plus spacieux */
+border: 1px solid #ccc;
+border-radius: 5px;
+outline: none;
+font-size: 30px; /* Augmente la taille de la police pour une meilleure lisibilité */
+margin-bottom: 10px; /* Ajoute un peu d'espace en bas de chaque champ */
+}
+
+.submit {
+background-color: #4DA3FF;
+color: #fff;
+border: none;
+border-radius: 50px;
+padding: 20px 50px;
+cursor: pointer;
+font-size: medium;
+transition: background-color 0.3s ease;
+}
+
+.submit:hover {
+background-color: #0b3cc1; /* Couleur de survol */
+}
+
+</style>
+<script>
+  
+  // JavaScript functions for the first dropdown
+  function myFunction1(option) {
+      var dropdownButton = document.getElementById("dropdownButton1");
+      dropdownButton.textContent = option;
+      document.getElementById("myDropdown1").classList.toggle("show");
+  }
+  
+  // JavaScript functions for the second dropdown
+  function myFunction2(option) {
+      var dropdownButton = document.getElementById("dropdownButton2");
+      dropdownButton.textContent = option;
+      document.getElementById("myDropdown2").classList.toggle("show2");
+  }
+  
+  window.onclick = function(event) {
+      if (!event.target.matches('.dropbtn1')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show')) {
+                  openDropdown.classList.remove('show');
+              }
+          }
+      }
+
+      if (!event.target.matches('.dropbtn2')) {
+          var dropdowns = document.getElementsByClassName("dropdown-content2");
+          var i;
+          for (i = 0; i < dropdowns.length; i++) {
+              var openDropdown = dropdowns[i];
+              if (openDropdown.classList.contains('show2')) {
+                  openDropdown.classList.remove('show2');
+              }
+          }
+      }
+  }
+</script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.getElementById('myForm').addEventListener('submit', function(event) {
+      event.preventDefault(); // Empêche le formulaire de se soumettre normalement
+      
+      // Afficher la petite fenêtre ici
+      alert("La soumission du formulaire est réussie!");
+
+      // Vous pouvez également afficher une boîte de dialogue modale personnalisée ici
+      
+      // Réinitialiser le formulaire si nécessaire
+      // document.getElementById('myForm').reset();
+  });
+});
+</script>
+            
+        </div>
+    </section>
+    
+    <script src="static/js/script.js"></script>>
+</body>
+</html>
+
+
